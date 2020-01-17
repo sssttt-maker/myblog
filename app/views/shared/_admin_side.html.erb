@@ -1,0 +1,25 @@
+
+<div class="header"></div>
+<input type="checkbox" class="input-check openSidebarMenu" id="openSidebarMenu">
+<label for="openSidebarMenu" class="sidebarIconToggle">
+  <div class="spinner diagonal part-1"></div>
+  <div class="spinner horizontal"></div>
+  <div class="spinner diagonal part-2"></div>
+</label>
+<div id="sidebarMenu">
+  <ul class="sidebarMenuInner">
+    <li><i class="fas fa-home"></i><%= link_to 'Home', root_path %></li>
+    <li><i class="fas fa-chart-bar"></i><%= link_to 'Dashboard', admin_path %></li>
+    <li><i class="fas fa-pen-square"></i><%= link_to 'New Post', new_admin_post_path %></li>
+    <li><i class="fas fa-file-code"></i>
+      <%= link_to 'All Posts', all_admin_posts_path %>
+      <ul>
+        <li>-<%= link_to 'Published', published_admin_posts_path, class: 'li-child' %></li>
+        <li>-<%= link_to 'Drafts', drafts_admin_posts_path, class: 'li-child' %></li>
+      </ul>
+    </li>
+    <li><i class="fas fa-camera"></i><%= link_to 'New Gallery', new_admin_gallery_path %></li>
+    <li><i class="fas fa-tags"></i><%= link_to 'Category', admin_categories_path %></li>
+    <li><i class="fas fa-sign-out-alt"></i><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+  </ul>
+</div>

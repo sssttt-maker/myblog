@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-sm navbar-dark  fixed-top top-nav" id="mainNav">
+  <a class="navbar-brand" href="/">Muto Atsuya</a>
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <%= link_to 'About', about_url, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Blog', posts_url, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Gallery', galleries_url, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Menu', menu_url, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <a href="<%= t('url.minimo') %>" class="nav-link">Reserve</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<header class="header">
+  <div class="header-content">
+    <h1 class="site-title">MutoAtsuya</h1>
+    <p class="site-title-sub">stylist</p>
+    <i class="fas fa-chevron-circle-down toUnder"></i>
+  </div>
+</header>

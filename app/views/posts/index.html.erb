@@ -1,0 +1,49 @@
+<div class="main">
+  <h1 class="page-title">Blog</h1>
+  <div class="slide-wrapper">
+    <ul class="post-slider">
+      <% @slide_posts.each do |post| %>
+      <li>
+        <%= link_to post_path(post) do %>
+        <%= image_tag(post.custom_thumbnail(480, 270, 320, 180), class: 'slide-img') %>
+        <span><%= post.title %></span>
+        <% end %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+
+
+
+  <div class="card-wrapper row">
+    <h2 class="section-title">New Posts</h2>
+    <% @posts.each do |post| %>
+      <%= link_to post_path(post), class: 'disable' do %>
+        <div class="card-box col-lg-4 col-md-6">
+          <% if post.image.attached? %>
+            <%= image_tag(post.thumbnail, class: 'card-img') %>
+          <% else %>
+            <img src="/assets/no-image.png" class="card-img" />
+          <% end %>
+          <div class="card-details">
+            <div class="card-description">
+              <span class="card-day"><%= post.created_at.to_s(:datetime) %></span>
+              <span class="card-category">
+                <% post.categories.each do |category| %>
+                  <%= category.name %>
+                <% end %>
+              </span>
+            </div>
+            <p class="card-title"><%= post.title %></p>
+            <div class="btn-wrap">
+              <%= link_to 'READ MORE', post_path(post), class: 'card-btn' %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <div class="paginate">
+      <%= paginate @posts %>
+    </div>
+  </div>
+</div>

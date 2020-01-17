@@ -1,0 +1,20 @@
+<h1 class="page-title">Galleries</h1>
+<div class="gallery">
+  <div class="gallery-wrapper row">
+    <% @galleries.each do |gallery| %>
+    <div class="modal-open-box" data-id="<%= gallery.id %>">
+      <%= image_tag(gallery.images_thumbnail) %>
+    </div>
+    <% end %>
+  </div>
+  <div class="modal js-modal">
+    <div class="modal_bg modal-close"></div>
+    <div class="modal_content">
+      <div class="modal-img-wrap">
+      </div>
+      <p class="modal-description">
+      </p>
+      <a class="modal-close" href="">閉じる</a>
+    </div>
+  </div>
+</div>

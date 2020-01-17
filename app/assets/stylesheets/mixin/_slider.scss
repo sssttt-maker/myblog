@@ -1,0 +1,12 @@
+.post-slider {
+  padding: 0;
+  li {
+    margin-right: 10px;
+    width: 330px;
+    .slide-img {
+      border-radius: 3px;
+      margin-bottom: 6px;
+      box-shadow: 0 0 5px;
+    }
+  }
+}

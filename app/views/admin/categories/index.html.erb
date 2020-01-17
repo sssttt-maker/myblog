@@ -1,0 +1,28 @@
+<h1>Category</h1>
+
+
+<div class="category-list">
+  <ul class="list-group">
+    <% @categories.each do |category| %>
+    <li class="list-group-item">
+      <%= link_to admin_category_path(category) do %>
+      <span>
+        <%= category.name %>
+        <%= "(#{category.posts.count})" %>
+      </span>
+      <% end %>
+      <%= link_to '×', admin_category_path(category), method: :delete, class: 'delete-btn', data: { confirm: "カテゴリ「#{category.name}」を削除します。よろしいですか？"} %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="category-form">
+  <%= form_with(model: [ :admin, @category ], local: true) do |f| %>
+  <div class="form-group">
+    <%= f.label :name, 'New Category' %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <%= f.submit 'save', class: 'submit-btn' %>
+  <% end %>
+</div>

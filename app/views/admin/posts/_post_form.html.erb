@@ -1,0 +1,44 @@
+<div id="main_content">
+  <h2>Post</h2>
+  <%= form_with(model: [ :admin, @post ], local: true) do |f| %>
+    <div class="form-group">
+      <%= f.label :image, 'thumbnail' %>
+      <%= f.file_field :image, class: 'form-control-file img-upload' %>
+      <div class="preview"></div>
+    </div>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :text %>
+      <%= f.text_area :text %>
+    </div>
+    <div class="form-group">
+      <%= f.label :category %>
+      <%= collection_check_boxes(:post, :category_ids, Category.all, :id, :name) do |category| %>
+        <%= category.label do %>
+          <%= category.check_box %>
+          <%= category.text %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="form-group">
+      <%= f.check_box :published, {}, 'published', 'draft' %>
+      Publish
+    </div>
+    <%= f.submit :Save, class: 'submit-btn' %>
+<% end %>
+</div>
+
+
+<script>
+$(function() {
+  $('#post_text').froalaEditor({
+    toolbarSticky: false,
+    heightMin: 500,
+    heightMax: 750,
+    imageUploadToS3: <%= @aws_data.to_json.html_safe %>,
+  })
+});
+</script>

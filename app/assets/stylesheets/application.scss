@@ -1,0 +1,22 @@
+body {
+  text-align: center;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+@import 'bootstrap';
+@import './modules/base';
+@import './modules/root';
+@import "./mixin/blogcard";
+@import './modules/posts';
+@import './modules/about';
+@import './modules/galleries';
+@import './mixin/sns-button';
+@import './mixin/slider';
+@import './mixin/sns-share-button';
+@import './mixin/footer'; // modal

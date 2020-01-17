@@ -1,0 +1,37 @@
+<div class="admin">
+  <div class="admin-main">
+    <div class="admin-main--header">
+      <h2>Dashboard</h2>
+    </div>
+    <div class="admin-main--body">
+      <div class="row dashboard">
+        <div class="col-md-3 dashboard-item mx-3 my-4 px-2 py-2">
+          <%= link_to all_admin_posts_path do %>
+            Posts(<%= @posts.count %>)
+          <% end %>
+        </div>
+        <div class="col-md-3 dashboard-item mx-3 my-4 px-2 py-2">
+          <%= link_to published_admin_posts_path do %>
+            Published(<%= @published.count %>)
+          <% end %>
+        </div>
+        <div class="col-md-3 dashboard-item mx-3 my-4 px-2 py-2">
+          <%= link_to drafts_admin_posts_path do %>
+            Drafts(<%= @drafts.count %>)
+          <% end %>
+        </div>
+        <div class="col-md-3 dashboard-item mx-3 my-4 px-2 py-2">
+          <%= link_to admin_categories_path do %>
+            Categories(<%= @categories.count %>)
+          <% end %>
+        </div>
+        <div class="col-md-3 dashboard-item mx-3 my-4 px-2 py-2">
+          <%= link_to 'New Gallery', new_admin_gallery_path %>
+        </div>
+        <div class="col-md-3 dashboard-item mx-3 my-4 px-2 py-2">
+          <%= link_to 'New Post', new_admin_post_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

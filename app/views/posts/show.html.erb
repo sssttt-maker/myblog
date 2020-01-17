@@ -1,0 +1,33 @@
+<div class="post">
+  <div class="post-sub">
+    <h1 class="post-title">
+      <%= @post.title %>
+    </h1>
+    <% if @post.user == current_user %>
+    <span class="post-edit"><%= link_to '編集', edit_admin_post_path(@post) %></span>
+    <% end %>
+    <ul class="post-category">
+      <% @post.categories.each do |category| %>
+        <li class="item">
+          <%= category.name %>
+        </li>
+      <% end %>
+    </ul>
+    <p class="post-date">
+      <%= @post.created_at.to_s(:datetime) %>
+    </p>
+    <div class="post-img">
+      <%= image_tag(@post.post_thumbnail) if @post.image.attached? %>
+    </div>
+  </div>
+  <div class="post-main">
+    <div class="post-text">
+      <%== @post.text %>
+    </div>
+  </div>
+  <div class="shareList">
+    <%= link_to 'Twitterでシェア', "https://twitter.com/share?url=#{request.url}", class: 'shareList__link icon-twitter', title: 'Twitter', target: '_blank' %>
+    <%= link_to 'Facebookでシェア', "https://www.facebook.com/sharer/sharer.php?u=#{request.url}", class: 'shareList__link icon-facebook', title: 'Facebook', target: '_blank' %>
+    <%= link_to 'LINEでシェア', "http://line.me/R/msg/text/?#{request.url}", class: 'shareList__link icon-line', title: 'LINE', target: '_blank' %>
+  </div>
+</div>
