@@ -68,3 +68,5 @@ gem 'image_processing'
 
 gem 'kaminari'
 gem 'meta-tags'
+
+gem 'google-analytics-rails'
