@@ -2,7 +2,6 @@ $(function() {
 
   $('.img-upload').change(function(e) {
     var files = e.target.files;
-    console.log(e.target.files)
 
     $.each(files, function(i) {
       var reader = new FileReader();
