@@ -5,17 +5,17 @@ module ApplicationHelper
       title: '',
       reverse: true,
       charset: 'utf-8',
-      description: 'description',
-      keywords: 'キーワード',
+      description: '休学中大学生のポートフォリオ兼ブログ',
+      keywords: 'shu,rails,プログラミング,休学,エンジニア,ブログ',
       canonical: request.original_url,
-      separator: '',
+      separator: '|',
       icon: [
         { href: image_url('favicon.ico') },
         { href: image_url('icon.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png' },
       ],
       og: {
-        site_name: 'サイト名', # もしくは site_name: :site
-        title: 'タイトル', # もしくは title: :title
+        site_name: :site, # もしくは site_name: :site
+        title: :title, # もしくは title: :title
         description: 'description', # もしくは description: :description
         type: 'website',
         url: request.original_url,
