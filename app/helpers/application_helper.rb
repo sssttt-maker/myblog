@@ -1,17 +1,17 @@
 module ApplicationHelper
   def default_meta_tags
     {
-      site: 'サイト名',
-      title: 'タイトル',
+      site: 'shu-Official',
+      title: '',
       reverse: true,
       charset: 'utf-8',
       description: 'description',
       keywords: 'キーワード',
       canonical: request.original_url,
-      separator: '|',
+      separator: '',
       icon: [
         { href: image_url('favicon.ico') },
-        { href: image_url('icon.jpg'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' },
+        { href: image_url('icon.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png' },
       ],
       og: {
         site_name: 'サイト名', # もしくは site_name: :site
@@ -19,12 +19,12 @@ module ApplicationHelper
         description: 'description', # もしくは description: :description
         type: 'website',
         url: request.original_url,
-        image: image_url('ogp.png'),
+        image: image_url('tree.jpg'),
         locale: 'ja_JP',
       },
       twitter: {
         card: 'summary',
-        site: '@ツイッターのアカウント名',
+        site: '@T_Shu_Channel',
       }
     }
   end
