@@ -65,6 +65,7 @@ gem 'mini_magick'
 gem 'aws-sdk-s3', require: false
 gem 'dotenv-rails'
 gem 'image_processing'
+gem 'acts-as-taggable-on'
 
 gem 'kaminari'
 gem 'meta-tags'

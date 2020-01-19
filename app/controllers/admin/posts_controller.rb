@@ -50,7 +50,7 @@ class Admin::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :text, :published, :image, category_ids: [])
+    params.require(:post).permit(:title, :text, :published, :image, :tag_list, category_ids: [])
   end
 
   def hash_init
