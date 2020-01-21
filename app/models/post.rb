@@ -7,4 +7,15 @@ class Post < ApplicationRecord
 
   enum published: { draft: false, published: true }
 
+  validate :image_presence
+
+  def image_presence
+    if image.attached?
+      if !image.content_type.in?(%('image/jpeg image/png image/jpg'))
+        errors.add(:image, 'にはjpeg, jpgまたはpngファイルを添付してください')
+      end
+    else
+      errors.add(:image, 'ファイルを添付してください')
+    end
+  end
 end

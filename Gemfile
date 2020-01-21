@@ -69,5 +69,7 @@ gem 'acts-as-taggable-on'
 
 gem 'kaminari'
 gem 'meta-tags'
+gem 'sitemap_generator'
+gem 'whenever', require: false
 
 gem 'google-analytics-rails'

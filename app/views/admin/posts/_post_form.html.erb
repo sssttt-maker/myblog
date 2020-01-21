@@ -1,3 +1,11 @@
+<% if @post.errors.present? %>
+  <ul id="error_explanation">
+    <% @post.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <div id="main_content">
   <h2>Post</h2>
   <%= form_with(model: [ :admin, @post ], local: true) do |f| %>
@@ -39,6 +47,7 @@
 <script>
 $(function() {
   $('#post_text').froalaEditor({
+    language: 'ja',
     toolbarSticky: false,
     heightMin: 500,
     heightMax: 750,
