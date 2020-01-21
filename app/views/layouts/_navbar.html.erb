@@ -9,8 +9,14 @@
       <li class="nav-item">
         <%= link_to 'About', about_url, class: 'nav-link' %>
       </li>
-      <li class="nav-item">
-        <%= link_to 'Blog', posts_url, class: 'nav-link' %>
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Blog</a>
+        <div class="dropdown-menu">
+          <%= link_to 'All', posts_url, class: 'dropdown-item' %>
+          <% @allCategories.each do |category| %>
+            <%= link_to category.name, category_path(category), class: 'dropdown-item' %>
+          <% end %>
+        </div>
       </li>
       <li class="nav-item">
         <%= link_to 'Gallery', galleries_url, class: 'nav-link' %>

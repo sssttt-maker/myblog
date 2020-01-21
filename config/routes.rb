@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :posts, only: %i[index show]
+  resources :categories, only: %i[show]
   resources :galleries, only: %i[index] do
     collection do
       get '/image', to: 'galleries#get_url'
