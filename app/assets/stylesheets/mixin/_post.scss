@@ -1,18 +1,23 @@
 .post {
-  padding: 2rem 4rem 4rem 4rem;
+  padding: 2rem 4rem 4rem;
+
   .post-sub {
     margin-bottom: 30px;
+
     .post-title {
       font-size: 1.8rem;
       position: relative;
       word-break: break-all;
     }
+
     .post-keywords {
       display: flex;
       justify-content: space-between;
+
       .post-category {
         padding-left: 8px;
         display: inline-block;
+
         .item {
           list-style: none;
           padding: 3px 5px;
@@ -21,38 +26,77 @@
           border-radius: 5px;
         }
       }
+
       .post-tags {
         display: inline-block;
+
         .item {
           list-style: none;
           display: inline-block;
-
         }
       }
     }
+
     .post-date {
       display: block;
       color: grey;
       margin: 0;
     }
+
     .post-img {
       width: 100%;
       text-align: center;
+
       img {
         width: 100%;
       }
     }
   }
+
   .post-main {
     line-height: 2.2;
+
     .post-text {
       line-height: 28.35px;
+
       a {
         color: #007bff;
       }
+
       a:hover {
         color: #0056b3;
       }
+
+      h2 {
+        position: relative;
+        padding: 0.5em;
+        background: #7db4e6;
+        color: white;
+        font-size: 25px;
+      }
+
+      h2::before {
+        position: absolute;
+        content: '';
+        top: 100%;
+        left: 0;
+        border: none;
+        border-bottom: solid 15px transparent;
+        border-right: solid 20px rgb(149, 158, 155);
+      }
+
+      h3 {
+        padding: 0.25em 0.5em;
+        /*上下 左右の余白*/
+        color: #494949;
+        /*文字色*/
+        background: transparent;
+        /*背景透明に*/
+        border-left: solid 5px #7db4e6;
+        /*左線*/
+        font-size: 20px;
+      }
+
       img {
         max-width: 100%;
       }
@@ -62,6 +106,7 @@
 @media (max-width: 576px) {
   .post {
     padding: 2rem 0 4rem;
+
     .post-sub {
       .post-title {
         font-size: 1.3rem;

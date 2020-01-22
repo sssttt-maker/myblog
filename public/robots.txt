@@ -1,2 +1,2 @@
 # See http://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
-Sitemap: https://shu-official.site/sitemap.xml.gz
+Sitemap: https://shu-engineer.com/sitemap.xml.gz

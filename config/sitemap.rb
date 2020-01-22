@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "https://shu-official.site"
+SitemapGenerator::Sitemap.default_host = "https://shu-engineer.com"
 
 SitemapGenerator::Sitemap.create do
 
