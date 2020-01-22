@@ -18,11 +18,14 @@
           <% end %>
         </div>
       </li>
-      <li class="nav-item">
-        <%= link_to 'Gallery', galleries_url, class: 'nav-link' %>
-      </li>
+      <!-- <li class="nav-item"> -->
+        <%#= link_to 'Gallery', galleries_url, class: 'nav-link' %>
+      <!-- </li> -->
       <li class="nav-item">
         <%= link_to 'Contact', new_contact_url, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <a href="<%= t('url.portfolio') %>" class="nav-link">Portfolio</a>
       </li>
     </ul>
   </div>

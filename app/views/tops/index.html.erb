@@ -1,25 +1,26 @@
 <div>
   <div class="items-all clearfix">
     <div class="item-box">
-      <%= image_tag 'blog.jpg', class: 'item-img' %>
-      <div class="overlay">
-        <%= link_to 'Blog', posts_path, class: 'expand' %>
-      </div>
-    </div>
-    <div class="item-box">
       <%= image_tag 'about.jpg', class: 'item-img' %>
       <div class="overlay">
         <%= link_to 'About', about_path, class: 'expand' %>
       </div>
     </div>
     <div class="item-box">
-      <%= image_tag 'gallery.jpg', class: 'item-img' %>
+      <%= image_tag 'blog.jpg', class: 'item-img' %>
       <div class="overlay">
-        <%= link_to 'Gallery', galleries_path, class: 'expand' %>
+        <%= link_to 'Blog', posts_path, class: 'expand' %>
       </div>
     </div>
     <div class="item-box">
-      <%= image_tag 'menu.jpg', class: 'item-img' %>
+      <%= image_tag 'portfolio.jpg', class: 'item-img' %>
+      <div class="overlay">
+        <%#= link_to 'Gallery', galleries_path, class: 'expand' %>
+        <a href="<%= t('url.portfolio') %>" class="expand">Portfolio</a>
+      </div>
+    </div>
+    <div class="item-box">
+      <%= image_tag 'contact.jpg', class: 'item-img' %>
       <div class="overlay">
         <%= link_to 'Contact', new_contact_url, class: 'expand' %>
       </div>

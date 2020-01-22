@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   resources :posts, only: %i[index show]
   resources :categories, only: %i[show]
   resources :contacts, only: %i[new create]
-  resources :galleries, only: %i[index] do
-    collection do
-      get '/image', to: 'galleries#get_url'
-    end
-  end
+  # resources :galleries, only: %i[index] do
+  #   collection do
+  #     get '/image', to: 'galleries#get_url'
+  #   end
+  # end
   get '/top', to: 'tops#index'
   get '/about', to: 'about#index'
   get '/menu', to: 'menu#index'
