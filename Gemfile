@@ -64,6 +64,7 @@ gem 'froala-editor-sdk'
 
 gem 'mini_magick'
 gem 'aws-sdk-s3', require: false
+gem 'aws-sdk'
 gem 'dotenv-rails'
 gem 'image_processing'
 gem 'acts-as-taggable-on'
