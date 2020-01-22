@@ -57,7 +57,7 @@ class Admin::PostsController < ApplicationController
     case Rails.env
     when 'development'
       options = {
-        bucket: ENV['DEVELOPMENT_S3_BUCKET_NAME'],
+        bucket: ENV['S3_BUCKET_NAME'],
         region: 'ap-northeast-1', # japan[Tokyo]
         keyStart: 'uploads/', # uploads/filename.png
         acl: 'public-read',
@@ -67,7 +67,7 @@ class Admin::PostsController < ApplicationController
       @aws_data = FroalaEditorSDK::S3.data_hash(options)
     when 'production'
       options = {
-        bucket: 'myblog-production',
+        bucket: ENV['S3_BUCKET_NAME'],
         region: 'ap-northeast-1', # japan[Tokyo]
         keyStart: 'uploads/', # uploads/filename.png
         acl: 'public-read',
