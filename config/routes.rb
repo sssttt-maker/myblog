@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   end
   devise_for :users
 
-  get 'sitemap', to: redirect('https://s3-ap-northeast-1.amazonaws.com/myblog-production/sitemap.xml.gz')
+  get 'sitemap', to: redirect('https://s3-ap-northeast-1.amazonaws.com/myblog-production/sitemaps/sitemap.xml.gz')
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
