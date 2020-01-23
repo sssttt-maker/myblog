@@ -1,4 +1,5 @@
 $(function() {
+  hljs.initHighlightingOnLoad();
 
   $('.img-upload').change(function(e) {
     var files = e.target.files;

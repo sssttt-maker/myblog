@@ -1,4 +1,5 @@
 $(function() {
+  hljs.initHighlightingOnLoad();
 
   var windowHeight = $(window).height();
   // post slider

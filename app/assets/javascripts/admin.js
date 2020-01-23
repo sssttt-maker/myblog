@@ -43,5 +43,7 @@
 //= require plugins/video.min
 //= require languages/ja
 
+
 //= require activestorage
+//= require plugin/highlight.pack.js
 //= require admin/main
