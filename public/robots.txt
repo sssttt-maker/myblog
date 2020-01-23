@@ -1,1 +1,1 @@
-Sitemap: https://shu-engineer.com/sitemap.xml.gz
+Sitemap: https://shu-engineer.com/sitemap
