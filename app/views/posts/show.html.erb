@@ -1,4 +1,4 @@
-<% set_meta_tags title: @post.title, description: @post.text, keywords: @post.tag_list.join(","), og: { title: @post.title, description: @post.text, type: 'article' }, twitter: { title: @post.title, description: @post.text } %>
+<% set_meta_tags title: @post.title, description: @post.description, keywords: @post.tag_list.join(","), og: { title: @post.title, description: @post.description, type: 'article' }, twitter: { title: @post.title, description: @post.description } %>
 <div class="post">
   <div class="post-sub">
     <h1 class="post-title">
