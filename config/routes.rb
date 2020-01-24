@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get '/top', to: 'tops#index'
   get '/about', to: 'about#index'
   get '/menu', to: 'menu#index'
+  get '/privacy', to: 'privacy_policy#index'
+  get '/sitemaps', to: 'sitemap#index'
   root to: 'tops#index'
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'

@@ -1,0 +1,13 @@
+<div class="sitemap">
+  <h1 class="page-title">サイトマップ</h1>
+  <div class="sitemap-main">
+    <% @categories.each do |category| %>
+    <h2 class="h2-title"><%= category.name %></h2>
+    <ul class="list-group">
+      <% category.posts.each do |post| %>
+      <li class="list-group-item"><%= link_to post.title, post_path(post) %></li>
+      <% end %>
+    </ul>
+    <% end %>
+  </div>
+</div>
