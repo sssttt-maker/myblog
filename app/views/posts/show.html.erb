@@ -24,7 +24,7 @@
       </ul>
     </div>
     <p class="post-date">
-      <%= @post.created_at.to_s(:datetime) %>
+      <%= @post.updated_at.to_s(:datetime) %>
     </p>
     <div class="post-img">
       <%= image_tag(@post.post_thumbnail) if @post.image.attached? %>
