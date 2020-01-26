@@ -22,5 +22,16 @@
         border-left: 1px solid #6c757d;
       }
     }
+    @media (max-width: 576px) {
+      .horizontal-list {
+        padding: 0;
+        .horizontal-item {
+          display: block;
+        }
+        .horizontal-item + .horizontal-item {
+          border: none;
+        }
+      }
+    }
   }
 }
