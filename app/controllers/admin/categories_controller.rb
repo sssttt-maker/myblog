@@ -16,6 +16,15 @@ class Admin::CategoriesController < ApplicationController
     end
   end
 
+  def edit
+    @category = Category.find(params[:id])
+  end
+
+  def update
+    @category = Category.find(params[:id])
+    @category.update!(category_params)
+  end
+
   def show
     @category = Category.find(params[:id])
     @posts = @category.posts

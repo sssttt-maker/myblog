@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     resources :posts, only: %i[new create edit update destroy] do
       get :all, :published, :drafts, on: :collection
     end
-    resources :categories, only: %i[index create show destroy]
+    resources :categories, only: %i[index create edit update show destroy]
     resources :galleries, only: %i[create new destroy]
   end
   devise_for :users

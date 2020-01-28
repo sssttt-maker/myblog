@@ -4,15 +4,9 @@
 <div class="category-list">
   <ul class="list-group">
     <% @categories.each do |category| %>
-    <li class="list-group-item">
-      <%= link_to admin_category_path(category) do %>
-      <span>
-        <%= category.name %>
-        <%= "(#{category.posts.count})" %>
-      </span>
-      <% end %>
-      <%= link_to '×', admin_category_path(category), method: :delete, class: 'delete-btn', data: { confirm: "カテゴリ「#{category.name}」を削除します。よろしいですか？"} %>
-    </li>
+      <li class="list-group-item" data-category="<%= category.id %>">
+        <%= render 'category', category: category %>
+      </li>
     <% end %>
   </ul>
 </div>
