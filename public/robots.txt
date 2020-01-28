@@ -1,1 +1,2 @@
+Disallow: /users/sign_in
 Sitemap: https://shu-engineer.com/sitemap
