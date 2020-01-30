@@ -1,0 +1,8 @@
+<%= link_to admin_category_path(category) do %>
+  <span>
+    <%= category.name %>
+    <%= "(#{category.posts.count})" %>
+  </span>
+<% end %>
+<%= link_to '編集', edit_admin_category_path(category), remote: true %>
+<%= link_to '×', admin_category_path(category), method: :delete, class: 'delete-btn', data: { confirm: "カテゴリ「#{category.name}」を削除します。よろしいですか？"} %>

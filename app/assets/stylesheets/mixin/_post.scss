@@ -59,44 +59,6 @@
     .post-text {
       line-height: 28.35px;
 
-      a {
-        color: #007bff;
-      }
-
-      a:hover {
-        color: #0056b3;
-      }
-
-      h2 {
-        position: relative;
-        padding: 0.5em;
-        background: #7db4e6;
-        color: white;
-        font-size: 25px;
-      }
-
-      h2::before {
-        position: absolute;
-        content: '';
-        top: 100%;
-        left: 0;
-        border: none;
-        border-bottom: solid 15px transparent;
-        border-right: solid 20px rgb(149, 158, 155);
-      }
-
-      h3 {
-        padding: 0.25em 0.5em;
-        /*上下 左右の余白*/
-        color: #494949;
-        /*文字色*/
-        background: transparent;
-        /*背景透明に*/
-        border-left: solid 5px #7db4e6;
-        /*左線*/
-        font-size: 20px;
-      }
-
       img {
         max-width: 100%;
       }
