@@ -1,7 +1,7 @@
 class Admin::PostsController < ApplicationController
+  require 'aws-sdk-s3'
   layout "admin"
   before_action :authenticate_user!
-  before_action :hash_init, only: %i[index new create edit]
 
   def new
     @post = current_user.posts.new
@@ -47,34 +47,25 @@ class Admin::PostsController < ApplicationController
       @posts = current_user.posts.draft
     end
 
+    def upload_image
+    @file = params[:file].tempfile
+    @key_name = "#{SecureRandom.hex}"  # バケットに置く際のキー名
+    @s3 = Aws::S3::Resource.new(
+      region: 'ap-northeast-1',  # リージョン東京
+      credentials: Aws::Credentials.new(
+        ENV['AWS_ACCESS_KEY_ID'],
+        ENV['AWS_SECRET_ACCESS_KEY']
+      )
+    )
+    obj = @s3.bucket(ENV['S3_BUCKET_NAME']).object(@key_name)
+    obj.put(body: @file, acl: 'public-read')
+    render(json: { url: obj.public_url })
+  end
+
   private
 
   def post_params
     params.require(:post).permit(:title, :description, :text, :published, :image, :tag_list, category_ids: [])
   end
 
-  def hash_init
-    case Rails.env
-    when 'development'
-      options = {
-        bucket: ENV['S3_BUCKET_NAME'],
-        region: 'ap-northeast-1', # japan[Tokyo]
-        keyStart: 'uploads/', # uploads/filename.png
-        acl: 'public-read',
-        accessKey: Rails.application.credentials.dig(:aws, :access_key_id),
-        secretKey: Rails.application.credentials.dig(:aws, :secret_access_key),
-      }
-      @aws_data = FroalaEditorSDK::S3.data_hash(options)
-    when 'production'
-      options = {
-        bucket: ENV['S3_BUCKET_NAME'],
-        region: 'ap-northeast-1', # japan[Tokyo]
-        keyStart: 'uploads/', # uploads/filename.png
-        acl: 'public-read',
-        accessKey: Rails.application.credentials.dig(:aws, :access_key_id),
-        secretKey: Rails.application.credentials.dig(:aws, :secret_access_key),
-      }
-      @aws_data = FroalaEditorSDK::S3.data_hash(options)
-    end
-  end
 end

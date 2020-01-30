@@ -59,8 +59,7 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'font-awesome-sass'
 gem 'devise'
-gem 'wysiwyg-rails'
-gem 'froala-editor-sdk'
+gem 'summernote-rails', '~> 0.8.12.0'
 
 gem 'mini_magick'
 gem 'aws-sdk-s3', require: false

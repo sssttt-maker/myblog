@@ -20,39 +20,87 @@ h1 h2 h3 {
   margin-top: 30px;
 }
 
+.custom-head,
+.note-editing-area {
+  h2 {
+    position: relative;
+    padding: 0.5em;
+    background: #7db4e6;
+    color: white;
+    font-size: 25px;
+  }
+
+  h2::before {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 0;
+    border: none;
+    border-bottom: solid 15px transparent;
+    border-right: solid 20px rgb(149, 158, 155);
+  }
+
+  h3 {
+    padding: 0.25em 0.5em;
+    /*上下 左右の余白*/
+    color: #494949;
+    /*文字色*/
+    background: transparent;
+    /*背景透明に*/
+    border-left: solid 5px #7db4e6;
+    /*左線*/
+    font-size: 20px;
+  }
+
+  blockquote {
+    position: relative;
+    padding: 10px 15px 10px 60px;
+    box-sizing: border-box;
+    font-style: italic;
+    background: #f5f5f5;
+    color: #777777;
+    border-left: 4px solid #9dd4ff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14);
+  }
+
+  blockquote:before {
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    content: "\f10d";
+    font-family: "Font Awesome 5 Free";
+    color: #9dd4ff;
+    font-size: 30px;
+    line-height: 1;
+    font-weight: 900;
+  }
+
+  blockquote p {
+    padding: 0;
+    margin: 7px 0;
+    line-height: 1.7;
+  }
+
+  blockquote cite {
+    display: block;
+    text-align: right;
+    color: #888888;
+    font-size: 0.9em;
+  }
+
+  a {
+    color: #007bff;
+  }
+
+  a:hover {
+    color: #0056b3;
+  }
+}
+
 .dropdown-item {
   font-family: sans-serif;
 }
-.h2-title {
-  position: relative;
-  padding: 0.5em;
-  background: #7db4e6;
-  color: white;
-  font-size: 25px;
-}
-
-.h2-title::before {
-  position: absolute;
-  content: '';
-  top: 100%;
-  left: 0;
-  border: none;
-  border-bottom: solid 15px transparent;
-  border-right: solid 20px rgb(149, 158, 155);
-}
-
-.h3-title {
-  padding: 0.25em 0.5em;
-  /*上下 左右の余白*/
-  color: #494949;
-  /*文字色*/
-  background: transparent;
-  /*背景透明に*/
-  border-left: solid 5px #7db4e6;
-  /*左線*/
-  font-size: 20px;
-}
-
 
 .delete-btn {
   color: red;
