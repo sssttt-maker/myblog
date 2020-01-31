@@ -18,7 +18,6 @@
 //= require summernote/summernote-bs4.min
 //= require summernote/lang/summernote-ja-JP
 //= require plugin/highlight.pack.js
-//= require plugin/summernote-cleaner.js
 
 //= require activestorage
 //= require admin/main
