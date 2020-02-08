@@ -1,5 +1,5 @@
 class SitemapController < ApplicationController
   def index
-    @categories = Category.all
+    @categories = Category.all.includes(:posts)
   end
 end

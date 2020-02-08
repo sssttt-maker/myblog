@@ -27,7 +27,7 @@ class Admin::CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    @posts = @category.posts
+    @posts = @category.posts.with_attached_image.includes(:categories)
   end
 
   def destroy

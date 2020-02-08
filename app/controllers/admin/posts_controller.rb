@@ -36,15 +36,15 @@ class Admin::PostsController < ApplicationController
     end
 
     def all
-      @posts = current_user.posts.all
+      @posts = current_user.posts.with_attached_image.includes(:categories)
     end
 
     def published
-      @posts = current_user.posts.published
+      @posts = current_user.posts.published.with_attached_image.includes(:categories)
     end
 
     def drafts
-      @posts = current_user.posts.draft
+      @posts = current_user.posts.draft.with_attached_image.includes(:categories)
     end
 
     def upload_image

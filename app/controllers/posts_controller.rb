@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
-    @slide_posts = Post.published
-    @posts = Post.published.order('created_at DESC').page(params[:page]).per(8)
+    @slide_posts = Post.published.with_attached_image
+    @posts = Post.published.with_attached_image.includes(:categories).order('created_at DESC').page(params[:page]).per(8)
   end
 
   def show
