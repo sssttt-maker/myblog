@@ -16,6 +16,21 @@ $(function() {
     return button.render(); // return button as jquery object
   }
 
+  var InsertAds = function() {
+    var ui = $.summernote.ui;
+    // create button
+    var button = ui.button({
+      contents: '<i>ads</i>',
+      tooltip: 'ads',
+      click: function() {
+        var node = $('<div class="post-ads"></div>')
+        $('[data-provider="summernote"]').summernote('editor.insertNode', node[0]);
+      }
+    });
+
+    return button.render(); // return button as jquery object
+  }
+
   $('[data-provider="summernote"]').each(function() {
     $(this).summernote({
       lang: "ja-JP",
@@ -28,7 +43,7 @@ $(function() {
         ['table', ['table']],
         ['insert', ['link', 'picture', 'video']],
         ['view', ['fullscreen', 'codeview', 'help']],
-        ['mybutton', ['code']]
+        ['mybutton', ['code', 'ads']]
       ],
       // cleaner: {
       //   action: 'both', // both|button|paste 'button' only cleans via toolbar button, 'paste' only clean when pasting content, both does both options.
@@ -45,7 +60,8 @@ $(function() {
       //   limitStop: false // true/false
       // },
       buttons: {
-        code: InsertCode
+        code: InsertCode,
+        ads: InsertAds
       },
       height: 600,
       callbacks: {
