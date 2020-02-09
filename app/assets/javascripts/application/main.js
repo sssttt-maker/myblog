@@ -13,6 +13,25 @@ $(function() {
     variableWidth: true,
   });
 
+  // adsense
+  var ad = (function() {/*
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-8061311962505780"
+         data-ad-slot="8379365276"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  */}).toString().match(/[^]*\/\*([^]*)\*\/\}$/);
+
+  if (!(ad == undefined || ad == null)) {
+    $('.post-text').find('.post-ads').html(ad[1]);
+  }
+
+
   // gallery modal
   $('.modal-open-box').each(function() {
     $(this).click(function() {
